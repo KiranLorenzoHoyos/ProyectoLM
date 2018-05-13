@@ -3,131 +3,110 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 a {
     color: inherit;
     text-decoration: none;
 }
-
 body {
     background-color: #eee;
     color: #4e4544;
     font: normal 16px sans-serif;
 }
-
 /* Page Layout */
-
 .container{
     max-width: 900px;
-    background-color: #fff;
+    background-color: #F7DC6F;
     margin: 0 auto;
     padding: 0 60px;
-
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-gap: 3%;
+    grid-template-columns: 5fr, 1fr;
     grid-template-areas:
         "header header"
+        "button button"
         "main sidebar"
         "footer footer";
-    grid-gap: 60px;
 }
-
 /* Header */
-
 header{
-    grid-area: header;
-
     color: #ef5350;
     padding: 20px 0;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-area: header;
 }
-
 header nav {
     justify-self: start;
-
     list-style: none;
-
-/*  This did not work well, inline-block used instead */
-/*  display: grid;
-    grid-template-columns: auto 1fr 1fr;
-    align-items: end;*/
+    display: inline-block;
 }
-
 header nav li {
     margin-right: 15px;
     display: inline-block;
 }
-
 header button {
     justify-self: end;
-
     background-color: #ef5350;
     border: none;
     padding: 8px 25px;
     color: #fff;
     cursor: pointer;
     text-transform: uppercase;
+    float:right;
+    grid-area: button;
 }
-
 /* Main Section */
-
 .main {
-    grid-area: main;
-
     text-align: center;
+    grid-area: main;
 }
-
 .main h2 {
     font-size: 32px;
     margin-bottom: 55px;
 }
-
 .main p {
     margin-bottom: 50px;
 }
-
 .main img {
     width: 100%;
 }
-
-
 /* Sidebar */
-
 .sidebar {
-    grid-area: sidebar;
-
     border: 1px solid #a2a2a2;
     padding: 20px;
+    grid-area: sidebar;
 }
-
 /* Footer */
-
 footer {
-    grid-area: footer;
-
     color: #ef5350;
     text-align: center;
     padding: 20px 0;
+    grid-area: footer;
 }
-
 footer p {
     color: #777;
     font-size: 12px;
     padding: 10px;
 }
-
-/*
-@media (max-width: 600px) {
+@media (min-width: 600px) and (max-width: 780px) {
     .container{
-        /*  Redefine the grid into a single column layout. */
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "main"
-            "sidebar"
-            "footer";
+      background-color: lightblue;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "button"
+        "main"
+        "sidebar"
+        "footer";
     }
 }
-*/
+@media (min-width: 1px) and (max-width: 600px) {
+    .container{
+      background-color: #A569BD;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "button"
+        "main"
+        "sidebar"
+        "footer";
+    }
+}
